@@ -1,15 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
+using BookShopTrainingApp.Core;
+using BookShopTrainingApp.Persistence;
+using BookShopTrainingApp.Queries.GetBooks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace BookShopTrainingApp
 {
@@ -27,10 +25,14 @@ namespace BookShopTrainingApp
         {
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddAutoMapper(typeof(BooksAutomapperProfile));
+            services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<IBookShopContext, BookShopContext>();
+            services.AddDbContext<BookShopContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString(Constants.connectionString)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, BookShopContext context)
         {
             if (env.IsDevelopment())
             {
@@ -40,7 +42,7 @@ namespace BookShopTrainingApp
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            context.Database.EnsureCreated();
             app.UseAuthorization();
             app.UseSwagger();
             app.UseSwaggerUI(c =>

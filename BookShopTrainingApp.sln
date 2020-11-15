@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShopTrainingApp.Core", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShopTrainingApp.Persistence", "BookShopTrainingApp.Persistence\BookShopTrainingApp.Persistence.csproj", "{742AE5A5-3D52-4BE6-BCBC-93F8EE2917FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShopTrainingApp.Domain", "BookShopTrainingApp.Domain\BookShopTrainingApp.Domain.csproj", "{EEB8FE4E-7A8D-4581-8E2A-2706CE6EC152}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShopTrainingApp.Application", "BookShopTrainingApp.Application\BookShopTrainingApp.Application.csproj", "{ACB2CA9C-657E-4CEB-8F71-0E0B906EA49C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShopTrainingApp.Queries", "BookShopTrainingApp.Queries\BookShopTrainingApp.Queries.csproj", "{24024421-D004-427A-8AFD-F9AEF0DD6594}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +33,18 @@ Global
 		{742AE5A5-3D52-4BE6-BCBC-93F8EE2917FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{742AE5A5-3D52-4BE6-BCBC-93F8EE2917FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{742AE5A5-3D52-4BE6-BCBC-93F8EE2917FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEB8FE4E-7A8D-4581-8E2A-2706CE6EC152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEB8FE4E-7A8D-4581-8E2A-2706CE6EC152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEB8FE4E-7A8D-4581-8E2A-2706CE6EC152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEB8FE4E-7A8D-4581-8E2A-2706CE6EC152}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACB2CA9C-657E-4CEB-8F71-0E0B906EA49C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB2CA9C-657E-4CEB-8F71-0E0B906EA49C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB2CA9C-657E-4CEB-8F71-0E0B906EA49C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB2CA9C-657E-4CEB-8F71-0E0B906EA49C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24024421-D004-427A-8AFD-F9AEF0DD6594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24024421-D004-427A-8AFD-F9AEF0DD6594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24024421-D004-427A-8AFD-F9AEF0DD6594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24024421-D004-427A-8AFD-F9AEF0DD6594}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
