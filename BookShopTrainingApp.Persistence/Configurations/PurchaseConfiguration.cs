@@ -12,6 +12,7 @@ namespace BookShopTrainingApp.Persistence.Configurations
             builder.HasOne(x => x.Book).WithMany(x => x.Purchases);
             builder.HasOne(x => x.Price).WithMany(x => x.Purchases);
             builder.HasOne(x => x.Discount).WithMany(x => x.Purchases);
+            builder.HasOne(x => x.Customer).WithMany(x => x.Purchases);
         }
     }
 }
