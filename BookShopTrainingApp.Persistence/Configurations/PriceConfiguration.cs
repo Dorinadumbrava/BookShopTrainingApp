@@ -1,13 +1,11 @@
-﻿using BookShopTrainingApp.Domain;
+﻿using BookShopTrainingApp.Core;
+using BookShopTrainingApp.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BookShopTrainingApp.Persistence.Configurations
 {
-    class PriceConfiguration : IEntityTypeConfiguration<Price>
+    internal class PriceConfiguration : IEntityTypeConfiguration<Price>
     {
         public void Configure(EntityTypeBuilder<Price> builder)
         {

@@ -3,21 +3,25 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BookShopTrainingApp.Domain
 {
-    public class Author
+    public class Customer
     {
-        public Author() { }
-        public Author(string name, string surname, string biography)
+        public Customer()
+        {
+        }
+
+        public Customer(string name, string surnmame, string email)
         {
             Name = name;
-            Surname = surname;
-            Biography = biography;
+            Surname = surnmame;
+            Email = email; 
         }
 
         [Key]
         public int Id { get; set; }
+
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string Biography { get; set; }
-        public IEnumerable<BookAuthor> Books { get; set; }
+        public string Email { get; set; }
+        public IEnumerable<Purchase> Purchases { get; set; }
     }
 }

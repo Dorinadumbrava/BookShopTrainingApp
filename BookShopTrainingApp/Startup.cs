@@ -1,13 +1,19 @@
 using AutoMapper;
+using BookShopTrainingApp.Application.AddBook;
+using BookShopTrainingApp.Application.AddPurchase;
+using BookShopTrainingApp.Application.Mailing;
+using BookShopTrainingApp.Application.PurchasesReport;
 using BookShopTrainingApp.Core;
 using BookShopTrainingApp.Persistence;
 using BookShopTrainingApp.Queries.GetBooks;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Reflection;
 
 namespace BookShopTrainingApp
 {
@@ -24,10 +30,17 @@ namespace BookShopTrainingApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerGen();
-            services.AddAutoMapper(typeof(BooksAutomapperProfile));
+            services.AddSwaggerGen(c => c.CustomSchemaIds(x => x.FullName));
+            services.AddAutoMapper(typeof(BooksAutomapperProfile), typeof(PurchaseAutomapperProfile));
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<IBookShopContext, BookShopContext>();
+            services.AddScoped<ISupplyBookService, SupplyBookService>();
+            services.AddScoped<IPurchaseService, PurchaseService>();
+            services.AddScoped<IMailingService, MailingService>();
+            services.AddScoped<IMailWrapper, MailWrapper>();
+            services.AddScoped<IReportingService, ReportingService>();
+            services.AddScoped<IExcelCreator, ExcelCreator>();
+            services.AddMediatR(Assembly.GetExecutingAssembly(), typeof(IMailingService).Assembly);
             services.AddDbContext<BookShopContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString(Constants.connectionString)));
         }
 

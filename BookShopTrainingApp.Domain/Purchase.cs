@@ -5,6 +5,15 @@ namespace BookShopTrainingApp.Domain
 {
     public class Purchase
     {
+        public Purchase() { }
+        public Purchase(int bookId, DateTime purchaseTime, int? priceId, int? discountId, int customerId)
+        {
+            BookId = bookId;
+            PurcahseTime = purchaseTime;
+            PriceId = priceId;
+            DiscountId = discountId;
+            CustomerId = customerId;
+        }
         [Key]
         public int? Id { get; set; }
 
@@ -15,5 +24,7 @@ namespace BookShopTrainingApp.Domain
         public Price Price { get; set; }
         public int? DiscountId { get; set; }
         public Discount Discount { get; set; }
+        public int? CustomerId { get; set; }
+        public Customer Customer { get; set; }
     }
 }

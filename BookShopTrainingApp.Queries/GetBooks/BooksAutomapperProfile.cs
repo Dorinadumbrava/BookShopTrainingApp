@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using BookShopTrainingApp.Domain;
-using BookShopTrainingApp.Queries.GetBooks;
 
 namespace BookShopTrainingApp.Queries.GetBooks
 {
@@ -10,7 +9,7 @@ namespace BookShopTrainingApp.Queries.GetBooks
         {
             CreateMap<Book, BookDto>()
                 .ForMember(dest => dest.Authors, opt => opt.MapFrom(src => src.Authors))
-                .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price.Amount.ToString()+" "+src.Price.Currency.ToString()))
+                .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price.Amount.ToString() + " " + src.Price.Currency.ToString()))
                 .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description));
 
             CreateMap<BookAuthor, AuthorDto>()

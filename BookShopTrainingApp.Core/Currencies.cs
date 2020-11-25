@@ -1,4 +1,4 @@
-﻿namespace BookShopTrainingApp.Domain
+﻿namespace BookShopTrainingApp.Core
 {
     public enum Currencies
     {

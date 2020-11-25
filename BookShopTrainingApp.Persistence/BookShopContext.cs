@@ -15,12 +15,12 @@ namespace BookShopTrainingApp.Persistence
         }
 
         public virtual DbSet<Book> Books { get; set; }
-        public virtual DbSet<Author> Authors { get; }
-        public virtual DbSet<BookAuthor> BookAuthors { get; }
-        public virtual DbSet<BookDiscount> BookDiscounts { get; }
-        public virtual DbSet<Discount> Discounts { get; }
-        public virtual DbSet<Price> Prices { get; }
-        public virtual DbSet<Purchase> Purchases { get; }
+        public virtual DbSet<Author> Authors { get; set; }
+        public virtual DbSet<BookAuthor> BookAuthors { get; set; }
+        public virtual DbSet<Discount> Discounts { get; set; }
+        public virtual DbSet<Price> Prices { get; set; }
+        public virtual DbSet<Purchase> Purchases { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
